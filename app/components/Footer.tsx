@@ -26,7 +26,6 @@ export default function Footer() {
           <a href="https://github.com/CPoooo" target="_blank" rel="noreferrer" className="text-ink-muted hover:text-accent transition-colors">
             GitHub
           </a>
-          {/* TODO: add resume in public */}
           <a href="/resume.pdf" download className="text-accent hover:text-ink transition-colors">
             Resume ↓
           </a>
