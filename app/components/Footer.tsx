@@ -12,7 +12,7 @@ export default function Footer() {
             Open to any software roles building technology they care about, and has a dev team that
             that actually likes to program.
             Web dev, defense, infra, ANYTHING (okay please just dont be legacy java) with real consequences/users
-            users on the other end.
+            on the other end.
           </p>
         </div>
 
