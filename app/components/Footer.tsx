@@ -9,10 +9,10 @@ export default function Footer() {
             Reach out please and thank you!
           </p>
           <p className="text-ink-muted text-sm max-w-sm">
-            Open to roles building software that has to actually work, and with a dev team that cares
-            and that actually likes to program (this is somehow hard to find).
-            web dev, defense, infra, ANYTHING (okay please just dont be legacy java) with real consequences
-            and users on the other end.
+            Open to any software roles building technology they care about, and has a dev team that
+            that actually likes to program.
+            Web dev, defense, infra, ANYTHING (okay please just dont be legacy java) with real consequences/users
+            users on the other end.
           </p>
         </div>
 
