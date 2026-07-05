@@ -1,1 +1,74 @@
 @import "tailwindcss";
+
+@theme {
+  --color-bg: #15130f;
+  --color-surface: #1d1a14;
+  --color-ink: #f3eee3;
+  --color-ink-muted: #9c9284;
+  --color-accent: #c69214;
+  --color-accent-deep: #7a5a10;
+  --color-line: #332b1f;
+
+  --font-display: var(--font-display);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+
+  --animate-marquee: marquee 32s linear infinite;
+  --animate-fade-up: fadeUp 0.6s ease-out forwards;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  background-color: #15130f;
+  color: #f3eee3;
+}
+
+::selection {
+  background: #c69214;
+  color: #15130f;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #9c9284;
+}
+
+.hairline {
+  border-color: #332b1f;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
