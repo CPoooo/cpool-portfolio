@@ -76,7 +76,7 @@ export default function Nav() {
               key={l.label}
               href={l.href}
               onClick={() => setOpen(false)}
-              className="font-mono text-sm tracking-[0.12em] uppercase text-ink-muted hover:text-ink transition-colors"
+              className="ink-link font-mono text-sm tracking-[0.12em] uppercase text-ink-muted hover:text-ink transition-colors"
             >
               {l.label}
             </a>

@@ -56,7 +56,7 @@ export default function ThemeToggle() {
       aria-checked={isLight}
       aria-label="Toggle light and dark mode"
       onClick={toggle}
-      className="relative h-8 w-14 shrink-0 rounded-full border border-line/60 bg-surface transition-colors"
+      className="relative h-8 w-14 shrink-0 rounded-full border border-line/60 bg-surface transition-colors hover:cursor-pointer"
     >
       {/* static end icons for context */}
       <SunIcon
