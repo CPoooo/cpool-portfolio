@@ -22,8 +22,7 @@ const credentials = [
   { label: "Looking to get into", value: "Systems programming, robotics, HFT" },
   {
     label: "Before software",
-    value:
-      "Attempting to throw a 5oz sphere hard (Pitcher) as well as Striker of the month on Mario Strikers Charged",
+    value: "Biomechanics nerd. Baseball Pitcher",
   },
 ];
 
