@@ -28,7 +28,7 @@ const projects: Project[] = [
 export default function Projects() {
   return (
     <section id="projects" className="px-6 sm:px-10 py-24 sm:py-32 border-t hairline">
-      <p className="eyebrow mb-10">Projects</p>
+      <p className="eyebrow mb-10">Projects (The Cool Stuff)</p>
 
       <div className="grid sm:grid-cols-2 gap-px bg-line">
         {projects.map((p) => (

@@ -1,3 +1,4 @@
+import { Bold } from "lucide-react";
 import { EMAIL } from "../lib/my-info";
 
 export default function Footer() {
@@ -10,11 +11,21 @@ export default function Footer() {
           </p>
           <p className="text-ink-muted text-sm max-w-sm">
             Open to any software roles building technology they care about, and
-            has a dev team that that actually likes to program. Web dev,
-            defense, infra, ANYTHING (okay please just dont be legacy java) with
-            real consequences/users on the other end.
+            has a dev team that actually likes to program.
+            <div className="mt-2">
+              Interested in many fields of software and technology: web dev,
+              defense, infra, ai, hft, robotics, computer vision, distributed
+              systems, game dev <span className="font-bold">anything</span>{" "}
+              software related
+            </div>
+            <span className="text-accent">
+              (well of course besides maintaing legacy j**a code 🤮) <br />
+            </span>
+            <div className="mt-2">
+              Something something reach out or something else need to add just a
+              little bit more here. Looks better, this way.
+            </div>
           </p>
-          
         </div>
 
         <div className="flex flex-wrap gap-x-8 gap-y-3 font-mono text-xs tracking-widest uppercase">

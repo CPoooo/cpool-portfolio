@@ -59,7 +59,7 @@ export default function Hero() {
             href="#projects"
             className="ink-link font-mono text-xs tracking-[0.14em] uppercase text-ink"
           >
-            TL;DR the code is here ↓
+            TL;DR: the code is here ↓
           </a>
           <div className="hidden sm:flex items-center gap-2 font-mono text-xs text-ink-muted">
             <span className="text-accent index-label">
