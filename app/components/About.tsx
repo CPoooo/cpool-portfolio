@@ -26,7 +26,6 @@ export default function About() {
       className="px-6 sm:px-10 py-24 sm:py-32 border-t hairline"
     >
       <div className="flex items-baseline gap-4 mb-14">
-        <span className="index-label text-accent">01</span>
         <p className="eyebrow">About</p>
       </div>
 

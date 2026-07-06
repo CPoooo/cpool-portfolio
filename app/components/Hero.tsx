@@ -50,8 +50,8 @@ export default function Hero() {
         </h1>
 
         <p className="mt-3 font-display italic text-[clamp(1.1rem,1rem+1vw,1.75rem)] text-ink-muted max-w-2xl leading-snug">
-          Spent five years learning to throw a ball 100mph. Now I point that
-          same obsession at systems that can&apos;t afford to fail.
+          Ex baseball something something inspiration, inspiration, commas kinda
+          look cool. Code something passionate about, furthermore
         </p>
 
         <div className="mt-8 flex items-center justify-between">
@@ -59,7 +59,7 @@ export default function Hero() {
             href="#projects"
             className="ink-link font-mono text-xs tracking-[0.14em] uppercase text-ink"
           >
-            See the work ↓
+            TL;DR the code is here ↓
           </a>
           <div className="hidden sm:flex items-center gap-2 font-mono text-xs text-ink-muted">
             <span className="text-accent index-label">
