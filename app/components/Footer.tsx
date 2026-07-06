@@ -1,4 +1,3 @@
-import { Bold } from "lucide-react";
 import { EMAIL } from "../lib/my-info";
 
 export default function Footer() {
