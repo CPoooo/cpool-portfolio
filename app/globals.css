@@ -1,85 +1,132 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg: #222831;
-  --color-surface: #393e46;
-  --color-surface-raised: #454c56;
-  --color-ink: #dfd0b8;
-  --color-ink-muted: #5a544b;
-  --color-accent: #948979;
-  --color-accent-deep: #7a715f;
-  --color-accent-soft: #9489791a; /* ~10% opacity, for subtle bg tints/glows */
+  --color-bg: #14161a;
+  --color-surface: #1b1e23;
+  --color-surface-raised: #22262c;
+  --color-ink: #ece7dd;
+  --color-ink-muted: #8b8a86;
+  --color-ink-faint: #57564f;
+
+  --color-accent: #7f9a76;
+  --color-accent-deep: #5f7658;
+  --color-accent-soft: #7f9a761a;
+
   --color-signal: #bd4444;
   --color-signal-soft: #bd44441a;
-  --color-line: #454c56;
+
+  --color-line: #2a2d33;
+  --color-line-strong: #3a3e45;
+
   --font-display: var(--font-display);
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
+
+  --shadow-card: 0 1px 2px rgba(0,0,0,0.4), 0 12px 24px -8px rgba(0,0,0,0.5);
+  --shadow-card-hover: 0 1px 2px rgba(0,0,0,0.5), 0 20px 40px -12px rgba(0,0,0,0.6);
+
   --animate-marquee: marquee 32s linear infinite;
   --animate-fade-up: fadeUp 0.6s ease-out forwards;
 }
+
 /* Light mode overrides. Unlayered rules beat Tailwind's @layer theme
    defaults regardless of source order, so this is safe to keep simple. */
 .light {
-  --color-bg: #f4f1ea;
-  --color-surface: #e8e2d5;
-  --color-surface-raised: #ddd5c4;
-  --color-ink: #1c2129;
-  --color-ink-muted: #5a544b;
-  --color-accent: #5e584f;
-  --color-accent-deep: #443f37;
-  --color-accent-soft: #5c564d1a;
-  --color-signal: #a82e2e;
-  --color-signal-soft: #a031311a;
-  --color-line: #cec2ad;
+  --color-bg: #f6f3ec;
+  --color-surface: #ffffff;
+  --color-surface-raised: #ffffff;
+  --color-ink: #1a1c1f;
+  --color-ink-muted: #6b6a64;
+  --color-ink-faint: #a3a19a;
+
+  --color-accent: #52694a;
+  --color-accent-deep: #3f5238;
+  --color-accent-soft: #52694a14;
+
+  --color-signal: #a13939;
+  --color-signal-soft: #a1393914;
+
+  --color-line: #e3ddd0;
+  --color-line-strong: #d3cbb9;
+
+  --shadow-card: 0 1px 2px rgba(20,15,5,0.05), 0 8px 20px -6px rgba(20,15,5,0.1);
+  --shadow-card-hover: 0 1px 2px rgba(20,15,5,0.06), 0 16px 32px -8px rgba(20,15,5,0.14);
 }
 
-@keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(14px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-* {
-  scroll-behavior: smooth;
-}
-html,
-body {
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+
+* { scroll-behavior: smooth; }
+
+html, body {
   background-color: var(--color-bg);
   color: var(--color-ink);
   transition: background-color 0.25s ease, color 0.25s ease;
 }
-::selection {
-  background: var(--color-accent);
-  color: var(--color-bg);
-}
+
+::selection { background: var(--color-accent); color: var(--color-bg); }
+
 .eyebrow {
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--color-ink-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
 }
-.hairline {
-  border-color: var(--color-line);
+.eyebrow::before {
+  content: '';
+  width: 1.5rem;
+  height: 1px;
+  background: var(--color-accent);
+  display: inline-block;
 }
-/* Signal utility — use sparingly: one live indicator, one primary CTA, error states */
+
+.index-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-ink-faint);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.05em;
+}
+
+.hairline { border-color: var(--color-line); }
+
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  box-shadow: var(--shadow-card);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+.card:hover {
+  box-shadow: var(--shadow-card-hover);
+  border-color: var(--color-line-strong);
+  transform: translateY(-2px);
+}
+
+.ink-link {
+  position: relative;
+  text-decoration: none;
+}
+.ink-link::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: -2px;
+  width: 100%; height: 1px;
+  background: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+.ink-link:hover::after { transform: scaleX(1); transform-origin: left; }
+
 .signal-dot {
   background: var(--color-signal);
   box-shadow: 0 0 0 3px var(--color-signal-soft);
 }
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;
@@ -88,15 +135,3 @@ body {
     scroll-behavior: auto !important;
   }
 }
-/* Random Color Palette Ideas to try */
-/* 
-Dark: Black, Grey, Beige, and Night
-#222831
-#393E46
-#948979
-#DFD0B8
-rgb(34, 40, 49)
-rgb(57, 62, 70)
-rgb(148, 137, 121)
-rgb(223, 208, 184)
- */
