@@ -5,9 +5,13 @@ import { useEffect, useState } from "react";
 const slides = [
   { label: "PITCHING — MOUND, GAME DAY" },
   { label: "COOL LIFTING VIDEO" },
-  { label: "AT THE DESK — SHIPPING CODE" },
+  {
+    label: "PIC OF YOU CODING IN THE BIG EMPTY ROOM (YOUR GITHUB PROFILE PIC)",
+  },
   { label: "PORTRAIT" },
+  { label: "MORE HOBBY VIDEOS AND PICTURES" },
   { label: "COOL CLIPS AND PICTURES" },
+  { label: "PIC OF JAZZY?" },
 ];
 
 export default function Hero() {

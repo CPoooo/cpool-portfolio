@@ -12,20 +12,24 @@ export default function Footer() {
           <p className="text-ink-muted text-sm max-w-sm">
             Open to any software roles building technology they care about, and
             has a dev team that actually likes to program.
-            <div className="mt-2">
-              Interested in many fields of software and technology: web dev,
+          </p>
+          <div className="mt-2">
+            <p className="text-ink-muted text-sm max-w-sm">
+              Interested in many fields of software/technology: web dev,
               defense, infra, ai, hft, robotics, computer vision, distributed
-              systems, game dev <span className="font-bold">anything</span>{" "}
-              software related
-            </div>
-            <span className="text-accent">
-              (well of course besides maintaing legacy j**a code 🤮) <br />
-            </span>
-            <div className="mt-2">
+              systems, game dev, <span className="font-bold">anything</span>{" "}
+              software related really{" "}
+              <span className="text-accent">
+                (well of course besides maintaing legacy j**a code 🤮) <br />
+              </span>
+            </p>
+          </div>
+          <div className="mt-2">
+            <p className="text-ink-muted text-sm max-w-sm">
               Something something reach out or something else need to add just a
               little bit more here. Looks better, this way.
-            </div>
-          </p>
+            </p>
+          </div>
         </div>
 
         <div className="flex flex-wrap gap-x-8 gap-y-3 font-mono text-xs tracking-widest uppercase">
