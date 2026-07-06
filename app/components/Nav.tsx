@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { EMAIL } from "../lib/my-info";
+import ThemeToggle from "./ThemeToggle";
 
 const links = [
   { label: "Projects", href: "#projects" },
@@ -14,7 +15,7 @@ export default function Nav() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
-      <div className="flex items-center justify-between px-6 sm:px-10 py-5">
+      <div className="flex items-center justify-between px-6 sm:px-10 py-5 bg-bg/55 backdrop-blur-md backdrop-saturate-150 border-b border-line/40">
         <a
           href="#top"
           className="font-mono text-sm tracking-[0.15em] uppercase text-ink"
@@ -23,30 +24,36 @@ export default function Nav() {
         </a>
 
         {/* desktop */}
-        <nav className="hidden sm:flex items-center gap-8">
-          {links.map((l) => (
-            <a
-              key={l.label}
-              href={l.href}
-              target={l.href.startsWith("http") ? "_blank" : undefined}
-              rel={l.href.startsWith("http") ? "noreferrer" : undefined}
-              className="font-mono text-xs tracking-[0.12em] uppercase text-ink-muted hover:text-accent transition-colors"
-            >
-              {l.label}
-            </a>
-          ))}
-        </nav>
+        <div className="hidden sm:flex items-center gap-8">
+          <nav className="flex items-center gap-8">
+            {links.map((l) => (
+              <a
+                key={l.label}
+                href={l.href}
+                target={l.href.startsWith("http") ? "_blank" : undefined}
+                rel={l.href.startsWith("http") ? "noreferrer" : undefined}
+                className="font-mono text-xs tracking-[0.12em] uppercase text-ink-muted hover:text-accent transition-colors"
+              >
+                {l.label}
+              </a>
+            ))}
+          </nav>
+          <ThemeToggle />
+        </div>
 
-        {/* mobile toggle */}
-        <button
-          aria-label="Toggle menu"
-          aria-expanded={open}
-          onClick={() => setOpen((v) => !v)}
-          className="sm:hidden flex flex-col gap-1.5 w-6"
-        >
-          <span className="h-px w-full bg-ink" />
-          <span className="h-px w-full bg-ink" />
-        </button>
+        {/* mobile: toggle + hamburger */}
+        <div className="flex items-center gap-4 sm:hidden">
+          <ThemeToggle />
+          <button
+            aria-label="Toggle menu"
+            aria-expanded={open}
+            onClick={() => setOpen((v) => !v)}
+            className="flex w-6 flex-col gap-1.5"
+          >
+            <span className="h-px w-full bg-ink" />
+            <span className="h-px w-full bg-ink" />
+          </button>
+        </div>
       </div>
 
       {/* mobile menu */}

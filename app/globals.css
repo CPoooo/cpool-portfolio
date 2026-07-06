@@ -1,20 +1,37 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg: #15130f;
-  --color-surface: #1d1a14;
-  --color-ink: #f3eee3;
-  --color-ink-muted: #9c9284;
-  --color-accent: #c69214;
-  --color-accent-deep: #7a5a10;
-  --color-line: #332b1f;
-
+  --color-bg: #222831;
+  --color-surface: #393e46;
+  --color-surface-raised: #454c56;
+  --color-ink: #dfd0b8;
+  --color-ink-muted: #5a544b;
+  --color-accent: #948979;
+  --color-accent-deep: #7a715f;
+  --color-accent-soft: #9489791a; /* ~10% opacity, for subtle bg tints/glows */
+  --color-signal: #bd4444;
+  --color-signal-soft: #bd44441a;
+  --color-line: #454c56;
   --font-display: var(--font-display);
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
-
   --animate-marquee: marquee 32s linear infinite;
   --animate-fade-up: fadeUp 0.6s ease-out forwards;
+}
+/* Light mode overrides. Unlayered rules beat Tailwind's @layer theme
+   defaults regardless of source order, so this is safe to keep simple. */
+.light {
+  --color-bg: #f4f1ea;
+  --color-surface: #e8e2d5;
+  --color-surface-raised: #ddd5c4;
+  --color-ink: #1c2129;
+  --color-ink-muted: #5a544b;
+  --color-accent: #5e584f;
+  --color-accent-deep: #443f37;
+  --color-accent-soft: #5c564d1a;
+  --color-signal: #a82e2e;
+  --color-signal-soft: #a031311a;
+  --color-line: #cec2ad;
 }
 
 @keyframes marquee {
@@ -25,7 +42,6 @@
     transform: translateX(-50%);
   }
 }
-
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -36,34 +52,34 @@
     transform: translateY(0);
   }
 }
-
 * {
   scroll-behavior: smooth;
 }
-
 html,
 body {
-  background-color: #15130f;
-  color: #f3eee3;
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
-
 ::selection {
-  background: #c69214;
-  color: #15130f;
+  background: var(--color-accent);
+  color: var(--color-bg);
 }
-
 .eyebrow {
   font-family: var(--font-mono);
   font-size: 0.7rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: #9c9284;
+  color: var(--color-ink-muted);
 }
-
 .hairline {
-  border-color: #332b1f;
+  border-color: var(--color-line);
 }
-
+/* Signal utility — use sparingly: one live indicator, one primary CTA, error states */
+.signal-dot {
+  background: var(--color-signal);
+  box-shadow: 0 0 0 3px var(--color-signal-soft);
+}
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;
@@ -72,3 +88,15 @@ body {
     scroll-behavior: auto !important;
   }
 }
+/* Random Color Palette Ideas to try */
+/* 
+Dark: Black, Grey, Beige, and Night
+#222831
+#393E46
+#948979
+#DFD0B8
+rgb(34, 40, 49)
+rgb(57, 62, 70)
+rgb(148, 137, 121)
+rgb(223, 208, 184)
+ */

@@ -23,8 +23,21 @@ const mono = IBM_Plex_Mono({
 
 export const metadata: Metadata = {
   title: "Cameron — Software Engineer",
-  description: "Software engineer. Former pitching mechanics nerd, now a software nerd... always was",
+  description:
+    "Software engineer. Former pitching mechanics nerd, now a software nerd... always was",
 };
+
+// Runs before hydration so there's no flash of the wrong theme on load.
+const themeInitScript = `
+(function () {
+  try {
+    var stored = window.localStorage.getItem("theme");
+    if (stored === "light") {
+      document.documentElement.classList.add("light");
+    }
+  } catch (e) {}
+})();
+`;
 
 export default function RootLayout({
   children,
@@ -32,7 +45,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${display.variable} ${sans.variable} ${mono.variable}`}>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${display.variable} ${sans.variable} ${mono.variable}`}
+    >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
       <body className="font-sans bg-bg text-ink antialiased">{children}</body>
     </html>
   );
